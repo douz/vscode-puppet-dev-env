@@ -14,11 +14,11 @@ docker pull dbarahona/vscode-puppet-dev:latest
 
 ```json
 {
-    ...
+    // ...
 
 	"image": "dbarahona/vscode-puppet-dev:latest",
 
-    ...
+    // ...
 }
 ```
 
@@ -29,13 +29,13 @@ by adding the following line to the `devcontainer.json` file.
 
 ```json
 {
-    ...
+    // ...
 
 	"mounts": [
 		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
 	]
 
-    ...
+    // ...
 }
 ```
 
@@ -45,13 +45,13 @@ To persist the bash history between runs you need to add the following line to t
 
 ```json
 {
-    ...
+    // ...
 
 	"mounts": [
 		"source=<project-name>-bashhistory,target=/commandhistory,type=volume"
 	]
 
-    ...
+    // ...
 }
 ```
 
