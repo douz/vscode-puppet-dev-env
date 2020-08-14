@@ -4,10 +4,14 @@ FROM ubuntu:18.04
 RUN apt-get update && \
     apt-get -y install --no-install-recommends \
         apt-transport-https \
+        build-essential \
         ca-certificates \
         curl \
+        gcc \
         gnupg-agent \
+        make \
         ruby \
+        ruby-dev\
         software-properties-common \
         ssh
 
@@ -40,7 +44,8 @@ RUN gem install puppet && \
     gem install puppetlabs_spec_helper && \
     gem install rspec-puppet && \
     gem install rspec-puppet-facts && \
-    # workaround to prevent error when running unit tests
+    gem install bundler -v 1.17.2 && \
+    # workaround to prevent error when running rspec unit tests
     gem uninstall facter -v 4.0.34
 
 # Persist bash history
