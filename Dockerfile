@@ -45,8 +45,7 @@ RUN gem install puppet && \
     gem install rspec-puppet && \
     gem install rspec-puppet-facts && \
     gem install bundler -v 1.17.2 && \
-    # workaround to prevent error when running rspec unit tests
-    gem uninstall facter -v 4.0.34
+    gem install onceover -v 3.0.7
 
 # Persist bash history
 ARG USERNAME=root
