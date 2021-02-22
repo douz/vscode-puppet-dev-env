@@ -29,7 +29,7 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add - && \
     $(lsb_release -cs) \
     stable" && \
     apt-get update && \
-    apt-get -y install docker-ce
+    apt-get -y install docker-ce-cli
 
  # Clean up after installations
 RUN apt-get autoremove -y \
@@ -41,7 +41,7 @@ RUN apt-get autoremove -y \
 RUN gem install puppet && \
     gem install puppet-lint && \
     gem install puppet-syntax && \
-    gem install puppetlabs_spec_helper && \
+    gem install puppetlabs_spec_helper -v 2.15.0 && \
     gem install rspec-puppet && \
     gem install rspec-puppet-facts && \
     gem install bundler -v 1.17.2 && \
