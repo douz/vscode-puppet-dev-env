@@ -8,6 +8,7 @@ RUN apt-get update && \
         ca-certificates \
         curl \
         gcc \
+        git \
         gnupg-agent \
         make \
         ruby \
@@ -38,14 +39,7 @@ RUN apt-get autoremove -y \
     && rm -rf /tmp/puppet-tools-release-bionic.deb
 
 # install ruby gems for testing modules
-RUN gem install puppet && \
-    gem install puppet-lint && \
-    gem install puppet-syntax && \
-    gem install puppetlabs_spec_helper -v 2.15.0 && \
-    gem install rspec-puppet && \
-    gem install rspec-puppet-facts && \
-    gem install bundler -v 1.17.2 && \
-    gem install onceover -v 3.0.7
+RUN gem install bundler
 
 # Persist bash history
 ARG USERNAME=root
